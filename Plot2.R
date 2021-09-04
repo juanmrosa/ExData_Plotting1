@@ -3,7 +3,7 @@ PowerData <- read.table("./household_power_consumption.txt", header = TRUE,
                         sep =";", na.strings = c("?",""),
                         stringsAsFactors = FALSE)
 
-## Correct the classes of Date, Time and Global_active_power variables
+## Correct the classes of Date, Time and Global Active Power variables
 PowerData$Date <- as.Date(PowerData$Date, format="%d/%m/%Y")
 PowerData$Temp <- paste(PowerData$Date, PowerData$Time)
 PowerData$Time <- strptime(PowerData$Temp, format = "%Y-%m-%d %H:%M:%S")
